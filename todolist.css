@@ -1,11 +1,14 @@
+* {
+  background-color: rgb(105, 112, 112);
+}
 .Header {
   position: relative;
   text-align: center;
-  box-shadow: inset 0 0 99999px rgba(0, 120, 255, 0.5);
+  /* box-shadow: inset 0 0 99999px rgba(0, 120, 255, 0.5); */
 }
 
 .Image {
-  box-shadow: inset 0 0 99999px rgba(0, 120, 255, 0.5);
+  /* box-shadow: inset 0 0 99999px rgba(0, 120, 255, 0.5); */
   display: block;
   margin: auto;
   width: 100%;
@@ -13,13 +16,24 @@
 }
 
 .HeaderText {
+  background-color: transparent;
   position: absolute;
-  /* text-align: center; */
   color: white;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 85px;
   top: 50%;
   left: 50%;
   font-size: 70px;
   transform: translate(-50%, -50%);
+}
+
+.inputBoxContainer {
+  text-align: center;
+}
+.inputBox {
+  padding: 15px;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  width: 250px;
 }
