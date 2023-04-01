@@ -1,9 +1,14 @@
 * {
   background-color: rgb(105, 112, 112);
 }
+
+/*Add image color overlay https://dev.to/ellen_dev/two-ways-to-achieve-an-image-colour-overlay-with-css-eio */
 .Header {
+  height: 300px;
   position: relative;
   text-align: center;
+  background: rgb(255, 201, 201);
+  overflow: hidden;
   /* box-shadow: inset 0 0 99999px rgba(0, 120, 255, 0.5); */
 }
 
@@ -13,6 +18,8 @@
   margin: auto;
   width: 100%;
   height: 300px;
+  object-fit: cover;
+  opacity: 0.4;
 }
 
 .HeaderText {
@@ -27,6 +34,10 @@
   transform: translate(-50%, -50%);
 }
 
+.container {
+  background-color: transparent;
+}
+
 .inputBoxContainer {
   /* padding: 20px; */
   width: 370px;
@@ -34,7 +45,6 @@
   padding: 15px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-
   background-color: rgb(255, 255, 255);
   text-align: center;
 }
