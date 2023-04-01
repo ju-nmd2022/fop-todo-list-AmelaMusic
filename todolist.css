@@ -20,7 +20,7 @@
   position: absolute;
   color: white;
   text-align: center;
-  margin-top: 65px;
+  margin-top: 0px;
   top: 50%;
   left: 50%;
   font-size: 70px;
@@ -32,7 +32,8 @@
   width: 370px;
   margin: 0 auto;
   padding: 15px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -53,4 +54,25 @@
   outline: none;
   border-radius: 10px;
   /* padding: 5px; */
+}
+
+.containerList {
+  height: auto;
+}
+
+ul {
+  width: 370px;
+  margin: 0 auto;
+  padding: 15px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+li {
+  list-style: none;
+  height: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  /* background-color: rgb(105, 112, 112); */
 }
