@@ -1,5 +1,6 @@
 * {
-  background-color: rgb(105, 112, 112);
+  background-color: rgb(194, 205, 205);
+  font-family: sans-serif;
 }
 
 /*Add image color overlay https://dev.to/ellen_dev/two-ways-to-achieve-an-image-colour-overlay-with-css-eio */
@@ -27,10 +28,11 @@
   position: absolute;
   color: white;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 10px;
   top: 50%;
   left: 50%;
-  font-size: 70px;
+  font-size: 80px;
+  font-weight: 800;
   transform: translate(-50%, -50%);
 }
 
@@ -58,12 +60,18 @@
 }
 
 .addButton {
-  background: rgb(105, 112, 112);
+  background: rgb(8, 170, 5);
   height: 30px;
   border: none;
   outline: none;
   border-radius: 10px;
+  font-weight: 550;
   /* padding: 5px; */
+}
+
+.addButton:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
 }
 
 .containerList {

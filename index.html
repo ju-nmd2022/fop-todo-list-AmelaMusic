@@ -12,19 +12,27 @@
       <img class="Image" src="Image.jpg" alt="" />
       <p class="HeaderText">To do list</p>
     </div>
-
+    <script src="todolist.js"></script>
     <div class="container">
       <div class="inputBoxContainer">
-        <input type="text" class="inputBox" placeholder="Add a task..." />
-        <button type="submit" class="addButton">Add</button>
+        <input
+          type="text"
+          id="input"
+          class="inputBox"
+          placeholder="Add a task..."
+        />
+        <button type="submit" onclick="adTaskList()" class="addButton">
+          Add
+        </button>
       </div>
 
       <div class="containerList">
-        <ul class="list">
+        <ul class="list" id="list">
           <li class="listadded">task1</li>
           <li class="listadded">task2</li>
         </ul>
       </div>
     </div>
   </body>
+  <script src="todolist.js"></script>
 </html>
