@@ -4,18 +4,22 @@ function adTaskList() {
 
   taskList.appendChild(document.createTextNode(input));
 
+  const markedButton = document.createElement("button");
+  markedButton.innerText = "Done";
+
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
 
-  const markedButton = document.createElement("button");
-  markedButton.innerText = "Done";
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("buttonContainer");
+  buttonContainer.appendChild(markedButton);
+  buttonContainer.appendChild(deleteButton);
 
   const container = document.createElement("div");
   container.classList.add("container");
 
   container.appendChild(taskList);
-  container.appendChild(deleteButton);
-  container.appendChild(markedButton);
+  container.appendChild(buttonContainer);
 
   document.getElementById("list").appendChild(container);
 
