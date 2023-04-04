@@ -7,5 +7,10 @@ function adTaskList() {
   taskList.appendChild(document.createTextNode(input));
 
   document.getElementById("list").appendChild(taskList);
+
+  const button = document.createElement("button");
+  button.innerText = "Delete";
+  document.getElementById("containerList").appendChild(button);
+
   //   localStorage.setItem(newListItem);
 }
