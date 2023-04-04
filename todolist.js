@@ -6,9 +6,11 @@ function adTaskList() {
 
   const markedButton = document.createElement("button");
   markedButton.innerText = "Done";
+  markedButton.onclick = markTask;
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
+  deleteButton.onclick = deleteTask;
 
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("buttonContainer");
@@ -25,3 +27,17 @@ function adTaskList() {
 
   //   localStorage.setItem(newListItem);
 }
+
+// source: lecture fruitshop
+function deleteTask() {
+  const element = this.parentNode.parentNode;
+  element.parentNode.removeChild(element);
+}
+
+function markTask() {
+  const taskList = this.parentNode.parentNode.querySelector("li");
+  taskList.style.textDecoration = "line-through";
+}
+
+var input = document.getElementById("input").value;
+localStorage.setItem("userinput", input);
