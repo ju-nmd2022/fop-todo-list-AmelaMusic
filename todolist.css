@@ -36,7 +36,7 @@
   transform: translate(-50%, -50%);
 }
 
-.container {
+.container2 {
   background-color: transparent;
 }
 
@@ -93,4 +93,14 @@ li {
   border-radius: 10px;
   background-color: transparent;
   /* background-color: rgb(105, 112, 112); */
+}
+
+.container {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  margin-left: 200px;
 }
