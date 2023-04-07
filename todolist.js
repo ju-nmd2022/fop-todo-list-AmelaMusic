@@ -25,7 +25,10 @@ function adTaskList() {
 
   document.getElementById("list").appendChild(container);
 
-  //   localStorage.setItem(newListItem);
+  // store in local storage
+  var tasks = JSON.parse(localStorage.getItem("tasks")) || "[]";
+  tasks.push(input);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // source: lecture fruitshop
@@ -38,6 +41,3 @@ function markTask() {
   const taskList = this.parentNode.parentNode.querySelector("li");
   taskList.style.textDecoration = "line-through";
 }
-
-var input = document.getElementById("input").value;
-localStorage.setItem("userinput", input);
