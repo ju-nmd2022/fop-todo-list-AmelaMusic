@@ -26,9 +26,9 @@ function adTaskList() {
   document.getElementById("list").appendChild(container);
 
   // store in local storage
-  var tasks = JSON.parse(localStorage.getItem("tasks")) || "[]";
-  tasks.push(input);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasksArray.push(input);
+  localStorage.setItem("tasks", JSON.stringify(tasksArray));
 }
 
 // source: lecture fruitshop
@@ -41,3 +41,29 @@ function markTask() {
   const taskList = this.parentNode.parentNode.querySelector("li");
   taskList.style.textDecoration = "line-through";
 }
+
+function displaySavedTasks() {
+  const savedElement = document.getElementById("list");
+
+  let tasksArray = JSON.parse(localStorage.getItem("tasks"));
+
+  if (tasksArray != null) {
+    let i = 0;
+    while (i < tasksArray.length) {
+      const task = tasksArray[i];
+      const item = document.createElement("li");
+      item.appendChild(document.createTextNode(task));
+      // document.getElementById("list").appendChild(item);
+      savedElement.appendChild(item);
+      i++;
+    }
+  }
+}
+
+window.onload = function () {
+  displaySavedTasks();
+};
+// localStorage.clear();
+// displaySavedTasks();
+
+function deleteSavedTasks() {}
