@@ -25,9 +25,11 @@ function adTaskList() {
 
   document.getElementById("list").appendChild(container);
 
+  const id = new Date().getTime().toString();
+
   // store in local storage
   var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasksArray.push(input);
+  tasksArray.push({ id, task: input });
   localStorage.setItem("tasks", JSON.stringify(tasksArray));
 }
 
@@ -35,6 +37,13 @@ function adTaskList() {
 function deleteTask() {
   const element = this.parentNode.parentNode;
   element.parentNode.removeChild(element);
+
+  const id = element.dataset.id;
+  // delete task. //Source: remove with task identifier:
+  //https://www.google.com/search?q=delete+from+local+storage+when+deleting+input&hl=sv&sxsrf=APwXEdfHYcTdacitm-3tDxQFEZYeO8wmyw:1681036361434&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjH07W5zJz-AhXyQ_EDHey0BOoQ_AUoAXoECAEQAw&biw=1036&bih=621&dpr=2#fpstate=ive&vld=cid:ebe8b768,vid:pRkHOD_nkH4
+  var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
+  const newTaskArray = tasksArray.filter((task) => task.id != id);
+  localStorage.setItem("tasks", JSON.stringify(newTaskArray));
 }
 
 function markTask() {
@@ -52,7 +61,7 @@ function displaySavedTasks() {
     while (i < tasksArray.length) {
       const task = tasksArray[i];
       const item = document.createElement("li");
-      item.appendChild(document.createTextNode(task));
+      item.appendChild(document.createTextNode(task.task));
       // document.getElementById("list").appendChild(item);
 
       const markedButton = document.createElement("button");
@@ -70,6 +79,7 @@ function displaySavedTasks() {
 
       const container = document.createElement("div");
       container.classList.add("container");
+      container.dataset.id = task.id;
 
       container.appendChild(item);
       container.appendChild(buttonContainer);
@@ -140,7 +150,21 @@ function displaySavedTasks() {
 window.onload = function () {
   displaySavedTasks();
 };
+
 // localStorage.clear();
 // displaySavedTasks();
 
-function deleteSavedTasks() {}
+//Source: remove with task identifier:
+//https://www.google.com/search?q=delete+from+local+storage+when+deleting+input&hl=sv&sxsrf=APwXEdfHYcTdacitm-3tDxQFEZYeO8wmyw:1681036361434&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjH07W5zJz-AhXyQ_EDHey0BOoQ_AUoAXoECAEQAw&biw=1036&bih=621&dpr=2#fpstate=ive&vld=cid:ebe8b768,vid:pRkHOD_nkH4
+// function deleteSavedTasks() {
+//   const element = this.parentNode.parentNode;
+//   element.parentNode.removeChild(element);
+
+//   const id = element.dataset.id;
+//   // delete task
+//   var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
+//   const newTaskArray = tasksArray.filter((task) => task.id != id);
+//   localStorage.setItem("tasks", JSON.stringify(newTaskArray));
+// }
+
+//GÖRA SÅ ATT MAN KAN RADERA/MARKERA TASKS SÅ DET SPARAS I LOCAL STORAGE/PÅ SKÄRMEN
