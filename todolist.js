@@ -7,11 +7,17 @@ function adTaskList() {
   taskList.setAttribute("data-id", id);
 
   const markedButton = document.createElement("button");
-  markedButton.innerText = "Done";
+  // markedButton.innerText = "Done";
+
+  markedButton.style.backgroundImage = 'url("mark.jpg")';
+  markedButton.classList.add("markedButton");
   markedButton.onclick = markTask;
 
   const deleteButton = document.createElement("button");
-  deleteButton.innerText = "Delete";
+  // deleteButton.innerText = "Delete";
+
+  deleteButton.style.backgroundImage = 'url("trash.png")';
+  deleteButton.classList.add("deleteButton");
   deleteButton.onclick = deleteTask;
 
   const buttonContainer = document.createElement("div");
@@ -75,11 +81,17 @@ function displaySavedTasks() {
       // document.getElementById("list").appendChild(item);
 
       const markedButton = document.createElement("button");
-      markedButton.innerText = "Done";
+      // markedButton.innerText = "Done";
+
+      markedButton.style.backgroundImage = 'url("mark.jpg")';
+      markedButton.classList.add("markedButton");
       markedButton.onclick = markTask;
 
       const deleteButton = document.createElement("button");
-      deleteButton.innerText = "Delete";
+      // deleteButton.innerText = "Delete";
+
+      deleteButton.style.backgroundImage = 'url("trash.png")';
+      deleteButton.classList.add("deleteButton");
       deleteButton.onclick = deleteTask;
 
       const buttonContainer = document.createElement("div");

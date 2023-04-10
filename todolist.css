@@ -59,15 +59,14 @@
   width: 250px;
 }
 
-/* .addButton {
-  background: rgb(8, 170, 5);
+.addButton {
+  background: #4caf50;
   height: 30px;
   border: none;
   outline: none;
   border-radius: 10px;
-  font-weight: 550; */
-/* padding: 5px;
-} */
+  font-weight: 550;
+}
 
 .addButton:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -103,4 +102,28 @@ li {
 
 .buttonContainer {
   background-color: transparent;
+}
+
+.markedButton {
+  background: white;
+
+  background-repeat: "no-repeat";
+  background-size: 20px;
+  width: 24px;
+  height: 24px;
+  border-style: "none";
+  outline: none;
+  background-color: "transparent";
+}
+
+.deleteButton {
+  background: white;
+
+  background-repeat: "no-repeat";
+  background-size: 20px;
+  width: 24px;
+  height: 24px;
+  border-style: "none";
+  outline: none;
+  background-color: "transparent";
 }
