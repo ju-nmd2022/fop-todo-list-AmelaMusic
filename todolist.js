@@ -1,8 +1,10 @@
 function adTaskList() {
   var input = document.getElementById("input").value;
   var taskList = document.createElement("li");
+  const id = new Date().getTime().toString();
 
   taskList.appendChild(document.createTextNode(input));
+  taskList.setAttribute("data-id", id);
 
   const markedButton = document.createElement("button");
   markedButton.innerText = "Done";
@@ -19,17 +21,16 @@ function adTaskList() {
 
   const container = document.createElement("div");
   container.classList.add("container");
+  container.dataset.id = id;
 
   container.appendChild(taskList);
   container.appendChild(buttonContainer);
 
   document.getElementById("list").appendChild(container);
 
-  const id = new Date().getTime().toString();
-
   // store in local storage
   var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasksArray.push({ id, task: input });
+  tasksArray.push({ id, task: input, done: false });
   localStorage.setItem("tasks", JSON.stringify(tasksArray));
 }
 
@@ -49,6 +50,13 @@ function deleteTask() {
 function markTask() {
   const taskList = this.parentNode.parentNode.querySelector("li");
   taskList.style.textDecoration = "line-through";
+
+  // const id = this.parentNode.parentNode.dataset.id;
+  const id = taskList.dataset.id;
+  let tasksArray = JSON.parse(localStorage.getItem("tasks"));
+  const task = tasksArray.find((task) => task.id === id);
+  task.done = true;
+  localStorage.setItem("tasks", JSON.stringify(tasksArray));
 }
 
 function displaySavedTasks() {
@@ -62,6 +70,8 @@ function displaySavedTasks() {
       const task = tasksArray[i];
       const item = document.createElement("li");
       item.appendChild(document.createTextNode(task.task));
+      item.dataset.id = task.id;
+
       // document.getElementById("list").appendChild(item);
 
       const markedButton = document.createElement("button");
@@ -87,6 +97,10 @@ function displaySavedTasks() {
       savedElement.appendChild(container);
 
       i++;
+
+      if (task.done) {
+        item.style.textDecoration = "line-through";
+      }
     }
   }
 }
