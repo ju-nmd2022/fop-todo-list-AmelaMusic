@@ -9,14 +9,14 @@ function adTaskList() {
   const markedButton = document.createElement("button");
   // markedButton.innerText = "Done";
 
-  markedButton.style.backgroundImage = 'url("mark.jpg")';
+  markedButton.style.backgroundImage = 'url("check-mark.png")';
   markedButton.classList.add("markedButton");
   markedButton.onclick = markTask;
 
   const deleteButton = document.createElement("button");
   // deleteButton.innerText = "Delete";
 
-  deleteButton.style.backgroundImage = 'url("trash.png")';
+  deleteButton.style.backgroundImage = 'url("trash-can.png")';
   deleteButton.classList.add("deleteButton");
   deleteButton.onclick = deleteTask;
 
@@ -83,14 +83,14 @@ function displaySavedTasks() {
       const markedButton = document.createElement("button");
       // markedButton.innerText = "Done";
 
-      markedButton.style.backgroundImage = 'url("mark.jpg")';
+      markedButton.style.backgroundImage = 'url("check-mark.png")';
       markedButton.classList.add("markedButton");
       markedButton.onclick = markTask;
 
       const deleteButton = document.createElement("button");
       // deleteButton.innerText = "Delete";
 
-      deleteButton.style.backgroundImage = 'url("trash.png")';
+      deleteButton.style.backgroundImage = 'url("trash-can.png")';
       deleteButton.classList.add("deleteButton");
       deleteButton.onclick = deleteTask;
 
