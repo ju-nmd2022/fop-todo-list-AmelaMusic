@@ -46,10 +46,12 @@
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 .inputBox {
-  /* padding: 5px; */
   height: 30px;
   /* margin-top: 20px; */
   background-color: rgb(255, 255, 255);
@@ -58,17 +60,23 @@
 }
 
 .addButton {
-  background: #4caf50;
+  background-color: transparent;
   height: 30px;
-  border: none;
-  outline: none;
+  /* border: none;
+  outline: none; */
   border-radius: 10px;
-  font-weight: 550;
+  margin-left: 10px;
+}
+
+.addImage {
+  background-color: transparent;
+  height: 22px;
+  width: 22px;
 }
 
 .addButton:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.01);
+  background-color: #696969;
+  /* transform: scale(1.1); */
 }
 
 .containerList {
@@ -117,6 +125,10 @@ li {
   background-color: "transparent";
 }
 
+.markedButton:hover {
+  transform: scale(1.1);
+}
+
 .deleteButton {
   background: white;
   background-size: 20px;
@@ -127,4 +139,8 @@ li {
   border-right: white;
   outline: none;
   background-color: "transparent";
+}
+
+.deleteButton:hover {
+  transform: scale(1.1);
 }
