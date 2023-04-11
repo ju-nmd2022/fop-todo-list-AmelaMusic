@@ -1,20 +1,19 @@
 function adTaskList() {
   var input = document.getElementById("input").value;
   var taskList = document.createElement("li");
+  //set the id for the tasks
   const id = new Date().getTime().toString();
 
   taskList.appendChild(document.createTextNode(input));
   taskList.setAttribute("data-id", id);
 
   const markedButton = document.createElement("button");
-  // markedButton.innerText = "Done";
 
   markedButton.style.backgroundImage = 'url("check-mark.png")';
   markedButton.classList.add("markedButton");
   markedButton.onclick = markTask;
 
   const deleteButton = document.createElement("button");
-  // deleteButton.innerText = "Delete";
 
   deleteButton.style.backgroundImage = 'url("trash-can.png")';
   deleteButton.classList.add("deleteButton");
@@ -35,6 +34,7 @@ function adTaskList() {
   document.getElementById("list").appendChild(container);
 
   // store in local storage
+  //assign specific id, the task and set done to false (for the mark line-through)
   var tasksArray = JSON.parse(localStorage.getItem("tasks")) || [];
   tasksArray.push({ id, task: input, done: false });
   localStorage.setItem("tasks", JSON.stringify(tasksArray));
@@ -57,7 +57,6 @@ function markTask() {
   const taskList = this.parentNode.parentNode.querySelector("li");
   taskList.style.textDecoration = "line-through";
 
-  // const id = this.parentNode.parentNode.dataset.id;
   const id = taskList.dataset.id;
   let tasksArray = JSON.parse(localStorage.getItem("tasks"));
   const task = tasksArray.find((task) => task.id === id);
@@ -78,17 +77,13 @@ function displaySavedTasks() {
       item.appendChild(document.createTextNode(task.task));
       item.dataset.id = task.id;
 
-      // document.getElementById("list").appendChild(item);
-
       const markedButton = document.createElement("button");
-      // markedButton.innerText = "Done";
 
       markedButton.style.backgroundImage = 'url("check-mark.png")';
       markedButton.classList.add("markedButton");
       markedButton.onclick = markTask;
 
       const deleteButton = document.createElement("button");
-      // deleteButton.innerText = "Delete";
 
       deleteButton.style.backgroundImage = 'url("trash-can.png")';
       deleteButton.classList.add("deleteButton");
@@ -110,6 +105,7 @@ function displaySavedTasks() {
 
       i++;
 
+      //if done=true (if text is marked as done) set the text decoration to "line-through"
       if (task.done) {
         item.style.textDecoration = "line-through";
       }
@@ -117,6 +113,7 @@ function displaySavedTasks() {
   }
 }
 
+//Executes after page finishes loading
 window.onload = function () {
   displaySavedTasks();
 };
