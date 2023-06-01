@@ -1,6 +1,7 @@
-// Source: most of code inspired from lecture fruitshop + linked youtube video
-// source: other lectures (while loop)
-// source: line 60, 62,68,70,71,74,80 based on youtube video: https://www.youtube.com/watch?v=pRkHOD_nkH4 accessed april 2023
+// Source: most of code inspired from lecture 01: Example - Fruit Shop
+// source: line 84, 85 based on chapter 14 lecture by Garrit (how to do while loop)
+// source: line 11,14,38  ChatGPT (The id)
+// source: line 60,61 62,68,70,71,72,81 modified/based on youtube video: https://www.youtube.com/watch?v=pRkHOD_nkH4 accessed april 2023
 
 // ads new tasks to the list and stores them in local storage
 function adTaskList() {
